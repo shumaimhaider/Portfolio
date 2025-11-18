@@ -1,0 +1,57 @@
+.footer {
+  background-color: var(--text-primary);
+  color: white;
+  padding: 2rem 20px;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-text {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.footer-built {
+  font-size: 0.95rem;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.heart-icon {
+  color: #ef4444;
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.1);
+  }
+  20%, 40% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 20px;
+  }
+
+  .footer-text,
+  .footer-built {
+    font-size: 0.9rem;
+  }
+}
+

@@ -1,0 +1,237 @@
+.contact {
+  background-color: var(--bg-secondary);
+}
+
+.contact-content {
+  max-width: 1000px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contact-text {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-text h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.contact-text p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.contact-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.contact-item-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-item-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(37, 99, 235, 0.15);
+}
+
+.contact-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--bg-accent), #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.contact-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.contact-value {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.contact-value:hover {
+  color: var(--primary-color);
+}
+
+.social-section {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.social-section h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+}
+
+.social-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background-color: var(--bg-secondary);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--hover-color);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.social-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-card:hover .social-icon {
+  background-color: var(--hover-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.social-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.cta-section {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cta-card {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  padding: 3rem;
+  border-radius: 16px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 10px 40px rgba(37, 99, 235, 0.3);
+}
+
+.cta-card h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.cta-card p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: white;
+  color: var(--primary-color);
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .contact-text h3 {
+    font-size: 1.7rem;
+  }
+
+  .contact-text p {
+    font-size: 1rem;
+  }
+
+  .contact-items {
+    grid-template-columns: 1fr;
+  }
+
+  .social-links {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cta-card {
+    padding: 2rem;
+  }
+
+  .cta-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .cta-card p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .social-links {
+    grid-template-columns: 1fr;
+  }
+}
+
