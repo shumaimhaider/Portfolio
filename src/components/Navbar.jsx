@@ -5,12 +5,34 @@ import './Navbar.css'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [scrollProgress, setScrollProgress] = useState(0)
+  const [activeSection, setActiveSection] = useState('')
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
+      
+      // Calculate scroll progress
+      const winScroll = document.documentElement.scrollTop
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+      const scrolled = (winScroll / height) * 100
+      setScrollProgress(scrolled)
+
+      // Update active section
+      const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'education', 'contact']
+      for (const section of sections) {
+        const element = document.getElementById(section)
+        if (element) {
+          const rect = element.getBoundingClientRect()
+          if (rect.top <= 100 && rect.bottom >= 100) {
+            setActiveSection(section)
+            break
+          }
+        }
+      }
     }
     window.addEventListener('scroll', handleScroll)
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
@@ -34,9 +56,13 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }}></div>
+      
       <div className="navbar-container">
         <a href="#hero" className="navbar-logo" onClick={(e) => handleNavClick(e, '#hero')}>
-          Shumaim Haider
+          <span className="logo-bracket">{'{'}</span>
+          <span className="logo-text">SH</span>
+          <span className="logo-bracket">{'}'}</span>
         </a>
 
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
@@ -44,7 +70,7 @@ const Navbar = () => {
             <li key={item.name} className="nav-item">
               <a
                 href={item.href}
-                className="nav-link"
+                className={`nav-link ${activeSection === item.href.substring(1) ? 'active' : ''}`}
                 onClick={(e) => handleNavClick(e, item.href)}
               >
                 {item.name}

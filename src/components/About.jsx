@@ -1,40 +1,103 @@
+import { useState, useEffect } from 'react'
 import './About.css'
 
 const About = () => {
+  const [counts, setCounts] = useState({ experience: 0, projects: 0, technologies: 0 })
+
+  useEffect(() => {
+    const targets = { experience: 3, projects: 10, technologies: 15 }
+    const duration = 2000
+    const steps = 60
+    const interval = duration / steps
+
+    let currentStep = 0
+    const timer = setInterval(() => {
+      currentStep++
+      const progress = currentStep / steps
+
+      setCounts({
+        experience: Math.floor(targets.experience * progress),
+        projects: Math.floor(targets.projects * progress),
+        technologies: Math.floor(targets.technologies * progress),
+      })
+
+      if (currentStep >= steps) {
+        setCounts(targets)
+        clearInterval(timer)
+      }
+    }, interval)
+
+    return () => clearInterval(timer)
+  }, [])
+
   return (
     <section id="about" className="about">
-      <div className="about-content scroll-reveal">
+      <div className="about-content">
         <h2 className="section-title">About Me</h2>
         <div className="about-grid">
-          <div className="about-text">
-            <p>
-              I'm a passionate Full Stack Developer with over 3 years of experience 
-              building scalable web applications. My expertise lies in creating efficient, 
-              user-friendly solutions using modern technologies.
-            </p>
-            <p>
-              Throughout my career, I've worked on diverse projects ranging from 
-              communication platforms to health-tech solutions, always focusing on 
-              performance optimization and clean architecture principles.
-            </p>
-            <p>
-              I'm particularly interested in real-time features, microservices architecture, 
-              and continuously learning new technologies to stay at the forefront of 
-              software development.
-            </p>
+          <div className="about-text scroll-reveal-left">
+            <div className="about-intro">
+              <h3 className="about-subtitle">Crafting Digital Excellence</h3>
+              <p className="about-highlight">
+                A passionate Full Stack Developer with over 3 years of experience 
+                building scalable, high-performance web applications that drive business results.
+              </p>
+            </div>
+            
+            <div className="about-details">
+              <div className="detail-item">
+                <div className="detail-icon">🚀</div>
+                <div className="detail-content">
+                  <h4>Professional Expertise</h4>
+                  <p>
+                    Specialized in creating efficient, user-friendly solutions using modern technologies. 
+                    Expert in React, Golang, Node.js, and PostgreSQL with a focus on clean architecture.
+                  </p>
+                </div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-icon">💼</div>
+                <div className="detail-content">
+                  <h4>Proven Track Record</h4>
+                  <p>
+                    Successfully delivered diverse projects from communication platforms to health-tech 
+                    solutions, consistently focusing on performance optimization and maintainability.
+                  </p>
+                </div>
+              </div>
+
+              <div className="detail-item">
+                <div className="detail-icon">⚡</div>
+                <div className="detail-content">
+                  <h4>Technical Innovation</h4>
+                  <p>
+                    Passionate about real-time features, microservices architecture, and leveraging 
+                    cutting-edge technologies to solve complex business challenges.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="about-stats">
-            <div className="stat-card">
-              <h3>3+</h3>
+
+          <div className="about-stats scroll-reveal-right">
+            <div className="stat-card stat-card-1">
+              <div className="stat-icon">📅</div>
+              <h3 className="counter">{counts.experience}+</h3>
               <p>Years Experience</p>
+              <div className="stat-progress"></div>
             </div>
-            <div className="stat-card">
-              <h3>10+</h3>
+            <div className="stat-card stat-card-2">
+              <div className="stat-icon">✅</div>
+              <h3 className="counter">{counts.projects}+</h3>
               <p>Projects Completed</p>
+              <div className="stat-progress"></div>
             </div>
-            <div className="stat-card">
-              <h3>15+</h3>
+            <div className="stat-card stat-card-3">
+              <div className="stat-icon">⚙️</div>
+              <h3 className="counter">{counts.technologies}+</h3>
               <p>Technologies</p>
+              <div className="stat-progress"></div>
             </div>
           </div>
         </div>
