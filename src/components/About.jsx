@@ -110,19 +110,19 @@ const About = memo(() => {
           <div className="about-stats scroll-reveal-right">
             <div className="stat-card stat-card-1">
               <div className="stat-icon">📅</div>
-              <h3 className="counter">{counts.experience}+</h3>
+              <h3 className="counter">{3}+</h3>
               <p>Years Experience</p>
               <div className="stat-progress"></div>
             </div>
             <div className="stat-card stat-card-2">
               <div className="stat-icon">✅</div>
-              <h3 className="counter">{counts.projects}+</h3>
+              <h3 className="counter">{10}+</h3>
               <p>Projects Completed</p>
               <div className="stat-progress"></div>
             </div>
             <div className="stat-card stat-card-3">
               <div className="stat-icon">⚙️</div>
-              <h3 className="counter">{counts.technologies}+</h3>
+              <h3 className="counter">{15}+</h3>
               <p>Technologies</p>
               <div className="stat-progress"></div>
             </div>
