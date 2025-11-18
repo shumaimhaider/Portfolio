@@ -5,6 +5,7 @@ const About = memo(() => {
   const [counts, setCounts] = useState({ experience: 0, projects: 0, technologies: 0 })
   const [hasAnimated, setHasAnimated] = useState(false)
   const sectionRef = useRef(null)
+  const timerRef = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -18,7 +19,7 @@ const About = memo(() => {
             const interval = duration / steps
 
             let currentStep = 0
-            const timer = setInterval(() => {
+            timerRef.current = setInterval(() => {
               currentStep++
               const progress = currentStep / steps
 
@@ -30,7 +31,8 @@ const About = memo(() => {
 
               if (currentStep >= steps) {
                 setCounts(targets)
-                clearInterval(timer)
+                clearInterval(timerRef.current)
+                timerRef.current = null
               }
             }, interval)
           }
@@ -46,6 +48,11 @@ const About = memo(() => {
     return () => {
       if (sectionRef.current) {
         observer.unobserve(sectionRef.current)
+      }
+      // Clear the interval if component unmounts
+      if (timerRef.current) {
+        clearInterval(timerRef.current)
+        timerRef.current = null
       }
     }
   }, [hasAnimated])
