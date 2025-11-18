@@ -1,37 +1,57 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, memo, useRef } from 'react'
 import './About.css'
 
-const About = () => {
+const About = memo(() => {
   const [counts, setCounts] = useState({ experience: 0, projects: 0, technologies: 0 })
+  const [hasAnimated, setHasAnimated] = useState(false)
+  const sectionRef = useRef(null)
 
   useEffect(() => {
-    const targets = { experience: 3, projects: 10, technologies: 15 }
-    const duration = 2000
-    const steps = 60
-    const interval = duration / steps
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasAnimated) {
+            setHasAnimated(true)
+            const targets = { experience: 3, projects: 10, technologies: 15 }
+            const duration = 2000
+            const steps = 60
+            const interval = duration / steps
 
-    let currentStep = 0
-    const timer = setInterval(() => {
-      currentStep++
-      const progress = currentStep / steps
+            let currentStep = 0
+            const timer = setInterval(() => {
+              currentStep++
+              const progress = currentStep / steps
 
-      setCounts({
-        experience: Math.floor(targets.experience * progress),
-        projects: Math.floor(targets.projects * progress),
-        technologies: Math.floor(targets.technologies * progress),
-      })
+              setCounts({
+                experience: Math.floor(targets.experience * progress),
+                projects: Math.floor(targets.projects * progress),
+                technologies: Math.floor(targets.technologies * progress),
+              })
 
-      if (currentStep >= steps) {
-        setCounts(targets)
-        clearInterval(timer)
+              if (currentStep >= steps) {
+                setCounts(targets)
+                clearInterval(timer)
+              }
+            }, interval)
+          }
+        })
+      },
+      { threshold: 0.3 }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
       }
-    }, interval)
-
-    return () => clearInterval(timer)
-  }, [])
+    }
+  }, [hasAnimated])
 
   return (
-    <section id="about" className="about">
+    <section id="about" className="about" ref={sectionRef}>
       <div className="about-content">
         <h2 className="section-title">About Me</h2>
         <div className="about-grid">
@@ -104,7 +124,9 @@ const About = () => {
       </div>
     </section>
   )
-}
+})
+
+About.displayName = 'About'
 
 export default About
 

@@ -24,7 +24,7 @@
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   gap: 5rem;
-  align-items: start;
+  align-items: center;
 }
 
 .about-text {
@@ -116,8 +116,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.8rem;
-  position: sticky;
-  top: 100px;
+  align-self: center;
 }
 
 .stat-card {

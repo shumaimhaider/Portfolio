@@ -11,7 +11,6 @@ const Footer = () => {
           © {currentYear} Shumaim Haider. All rights reserved.
         </p>
         <p className="footer-built">
-          Built with <FaHeart className="heart-icon" /> using React & Vite
         </p>
       </div>
     </footer>

@@ -39,7 +39,7 @@ const Projects = () => {
         'Successfully delivered MVP launch ahead of schedule',
         'Implemented robust error handling and monitoring systems',
       ],
-      technologies: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Redis'],
+      technologies: ['React', 'Node.js', 'Express.js', 'PostgreSQL', 'Redis', 'WebSockets'],
       metrics: [
         { icon: <FaChartLine />, label: '50%', description: 'Velocity Increase' },
         { icon: <FaClock />, label: 'On-Time', description: 'MVP Delivery' },
@@ -146,20 +146,7 @@ const Projects = () => {
                 ))}
               </div>
               
-              {project.github && (
-                <div className="project-links">
-                  <a 
-                    href={project.github} 
-                    className="project-link" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub />
-                    <span>View Code</span>
-                    <FaExternalLinkAlt className="link-arrow" />
-                  </a>
-                </div>
-              )}
+             
             </div>
           </div>
         ))}

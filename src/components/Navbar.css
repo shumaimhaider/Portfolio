@@ -12,21 +12,48 @@
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.navbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.03) 0%, rgba(59, 130, 246, 0.03) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
 .navbar.scrolled {
   background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
   backdrop-filter: blur(20px);
   height: 70px;
+}
+
+.navbar.scrolled::before {
+  opacity: 1;
 }
 
 .scroll-progress-bar {
   position: absolute;
   top: 0;
   left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color), var(--primary-color));
+  background-size: 200% 100%;
   transition: width 0.1s ease;
-  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 0 15px rgba(37, 99, 235, 0.6), 0 0 30px rgba(37, 99, 235, 0.3);
+  animation: progress-shimmer 3s linear infinite;
+}
+
+@keyframes progress-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
 .navbar-container {
@@ -39,7 +66,7 @@
 }
 
 .navbar-logo {
-  font-size: 1.8rem;
+  font-size: 2rem;
   font-weight: 700;
   color: var(--primary-color);
   cursor: pointer;
@@ -47,34 +74,81 @@
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  position: relative;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.navbar-logo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.navbar-logo:hover::before {
+  opacity: 1;
 }
 
 .logo-bracket {
   color: var(--secondary-color);
-  font-size: 2rem;
-  transition: transform 0.3s ease;
+  font-size: 2.2rem;
+  transition: all 0.3s ease;
+  animation: bracket-pulse 3s ease-in-out infinite;
+}
+
+@keyframes bracket-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .logo-text {
   font-weight: 800;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
 }
 
 .navbar-logo:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.05);
 }
 
 .navbar-logo:hover .logo-bracket {
-  transform: scale(1.2);
+  animation: none;
+  transform: scale(1.3) rotate(5deg);
+}
+
+.navbar-logo:hover .logo-bracket:first-child {
+  transform: scale(1.3) rotate(-5deg);
 }
 
 .nav-menu {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
@@ -83,9 +157,10 @@
   font-weight: 600;
   position: relative;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 8px 0;
-  font-size: 1rem;
+  padding: 10px 0;
+  font-size: 1.05rem;
 }
+
 
 .nav-link::before {
   content: '';
@@ -136,6 +211,63 @@
   width: 100%;
 }
 
+/* Resume Button in Navbar */
+.nav-resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-resume-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-resume-btn:hover::before {
+  left: 100%;
+}
+
+.nav-resume-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.nav-resume-btn svg {
+  font-size: 1.1rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-resume-btn:hover svg {
+  transform: translateY(-2px);
+  animation: bounce-download 0.6s ease infinite;
+}
+
+@keyframes bounce-download {
+  0%, 100% {
+    transform: translateY(-2px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+}
+
 .nav-icon {
   display: none;
   font-size: 1.5rem;
@@ -175,6 +307,22 @@
 
   .nav-icon {
     display: block;
+  }
+
+  .nav-resume-btn {
+    padding: 12px 24px;
+    margin: 0.5rem 2rem;
+    font-size: 1.1rem;
+  }
+
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .logo-bracket,
+  .logo-text,
+  .scroll-progress-bar {
+    animation: none !important;
   }
 }
 

@@ -7,7 +7,7 @@ const Experience = () => {
       company: 'Focusteck',
       position: 'Software Engineer',
       period: '09/2025 - Present',
-      location: 'Remote',
+      location: 'Lahore',
       achievements: [
         'Implemented real-time notifications using websockets, redis adapters and pusher channels for enhancing system scalability, supporting high concurrent users, improving overall user experience.',
         'Integrated Stripe into backend workflows, increasing payment transaction reliability and strengthening platform security.',

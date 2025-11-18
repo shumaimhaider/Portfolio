@@ -1,14 +1,37 @@
-import { useState, useEffect } from 'react'
-import { FaGithub, FaLinkedin, FaMedium, FaEnvelope, FaPhone, FaMapMarkerAlt, FaCode, FaRocket } from 'react-icons/fa'
+import { useState, useEffect, memo } from 'react'
+import { FaRocket, FaFileDownload, FaReact, FaNodeJs, FaDatabase } from 'react-icons/fa'
+import { SiGo, SiPostgresql } from 'react-icons/si'
 import './Hero.css'
 
-const Hero = () => {
+const Hero = memo(() => {
+  const [nameText, setNameText] = useState('')
   const [typedText, setTypedText] = useState('')
+  const [showRole, setShowRole] = useState(false)
   const roles = ['Full Stack Developer', 'Software Engineer', 'Problem Solver', 'Tech Enthusiast']
   const [roleIndex, setRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
+  const fullName = 'Shumaim Haider'
 
+  // Typing animation for name on load
   useEffect(() => {
+    if (nameText.length < fullName.length) {
+      const timer = setTimeout(() => {
+        setNameText(fullName.substring(0, nameText.length + 1))
+      }, 100)
+      return () => clearTimeout(timer)
+    } else {
+      // After name is typed, wait a bit then show role typing
+      const timer = setTimeout(() => {
+        setShowRole(true)
+      }, 500)
+      return () => clearTimeout(timer)
+    }
+  }, [nameText])
+
+  // Typing animation for role
+  useEffect(() => {
+    if (!showRole) return
+
     const currentRole = roles[roleIndex]
     const typingSpeed = isDeleting ? 50 : 100
 
@@ -28,7 +51,7 @@ const Hero = () => {
     }, typingSpeed)
 
     return () => clearTimeout(timer)
-  }, [typedText, isDeleting, roleIndex, roles])
+  }, [typedText, isDeleting, roleIndex, roles, showRole])
 
   return (
     <section id="hero" className="hero">
@@ -39,122 +62,92 @@ const Hero = () => {
       </div>
 
       <div className="hero-content">
-        <div className="hero-text animate-fadeInUp">
+        <div className="hero-text">
           <div className="hero-badge">
             <FaRocket className="badge-icon" />
             <span>Available for opportunities</span>
           </div>
 
           <h1 className="hero-title">
-            Hi, I'm <span className="gradient-text">Shumaim Haider</span>
+            Hi, I'm <span className="gradient-text typing-name-wrapper">
+              {nameText}
+              {nameText.length < fullName.length && <span className="cursor">|</span>}
+            </span>
           </h1>
-          <div className="hero-subtitle-wrapper">
-            <h2 className="hero-subtitle">
-              <span className="typing-text">{typedText}</span>
-              <span className="cursor">|</span>
-            </h2>
-          </div>
-          <p className="hero-description">
-            Crafting scalable, high-performance applications with <strong>3+ years of experience</strong>. 
-            Specialized in <strong>React</strong>, <strong>Golang</strong>, <strong>Node.js</strong>, and <strong>PostgreSQL</strong>. 
-            Passionate about building efficient systems, implementing real-time features, 
-            and delivering exceptional user experiences through clean architecture.
+          {showRole && (
+            <div className="hero-subtitle-wrapper">
+              <h2 className="hero-subtitle">
+                <span className="typing-text">{typedText}</span>
+                <span className="cursor">|</span>
+              </h2>
+            </div>
+          )}
+          <p className="hero-description animate-fade-in-delay">
+            With <strong>3+ years of experience</strong>, I engineer high-performance applications that drive 
+            real business impact. Specialized in <strong>React</strong>, <strong>Golang</strong>, <strong>Node.js</strong>, 
+            and <strong>PostgreSQL</strong>—delivering systems that scale reliably and perform exceptionally.
           </p>
           
-          <div className="hero-contact-info">
-            <div className="contact-item">
-              <FaEnvelope className="contact-icon" />
-              <a href="mailto:shumaimhaider@gmail.com">shumaimhaider@gmail.com</a>
-            </div>
-            <div className="contact-item">
-              <FaPhone className="contact-icon" />
-              <span>03071637899</span>
-            </div>
-            <div className="contact-item">
-              <FaMapMarkerAlt className="contact-icon" />
-              <span>Lahore, Pakistan</span>
-            </div>
-          </div>
-
-          <div className="hero-social">
-            <a 
-              href="https://linkedin.com/in/shumaimhaider" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              <FaLinkedin />
-            </a>
-            <a 
-              href="https://medium.com/@shumaimhaider" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              <FaMedium />
-            </a>
-            <a 
-              href="https://github.com/shumaimhaider" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="social-link"
-            >
-              <FaGithub />
-            </a>
-          </div>
+          <p className="hero-description-secondary">
+            From architecting microservices to optimizing complex databases, I transform 
+            challenging technical problems into elegant, scalable solutions. Every line of code 
+            is written with performance, maintainability, and user experience at its core.
+          </p>
 
           <div className="hero-cta">
-            <a href="#contact" className="btn btn-primary">
-              <span className="btn-text">Get In Touch</span>
-              <span className="btn-icon">→</span>
-            </a>
-            <a href="#projects" className="btn btn-secondary">
-              <span className="btn-text">View My Work</span>
-              <FaCode className="btn-icon" />
+            <a 
+              href="https://drive.google.com/file/d/1QZkLbs4rFqb6OqdpfVSLOuZv6N_VkmAx/view?usp=sharing" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="resume-button"
+            >
+              <FaFileDownload className="resume-icon" />
+              <span>View Resume</span>
             </a>
           </div>
         </div>
 
-        <div className="hero-visual animate-fadeIn">
-          <div className="code-block">
-            <div className="code-header">
-              <div className="code-dots">
-                <span className="dot red"></span>
-                <span className="dot yellow"></span>
-                <span className="dot green"></span>
-              </div>
-              <span className="code-title">portfolio.js</span>
-              <div className="code-actions">
-                <span className="action-icon">⋯</span>
-              </div>
+        <div className="hero-visual">
+          <div className="animated-shapes">
+            {/* Floating particles background */}
+            <div className="particles-container">
+              <div className="particle particle-1"></div>
+              <div className="particle particle-2"></div>
+              <div className="particle particle-3"></div>
+              <div className="particle particle-4"></div>
+              <div className="particle particle-5"></div>
+              <div className="particle particle-6"></div>
             </div>
-            <pre className="code-content">
-              <code>
-                <span className="code-keyword">const</span> <span className="code-variable">developer</span> = {'{'}
-                  <span className="code-property">name</span>: <span className="code-string">"Shumaim Haider"</span>,
-                  <span className="code-property">role</span>: <span className="code-string">"Full Stack Developer"</span>,
-                  <span className="code-property">experience</span>: <span className="code-string">"3+ years"</span>,
-                  <span className="code-property">skills</span>: [
-                    <span className="code-string">"React"</span>, <span className="code-string">"Golang"</span>,
-                    <span className="code-string">"Node.js"</span>, <span className="code-string">"PostgreSQL"</span>
-                  ],
-                  <span className="code-property">passion</span>: <span className="code-string">"Building scalable apps"</span>,
-                  <span className="code-property">status</span>: <span className="code-string">"🚀 Available"</span>
-                {'}'};
-              </code>
-            </pre>
-          </div>
-        </div>
-      </div>
 
-      <div className="scroll-indicator">
-        <div className="mouse">
-          <span className="scroll-text">Scroll to explore</span>
+            {/* Animated tech icons with glow */}
+            <div className="floating-icon float-icon-1">
+              <div className="icon-glow"></div>
+              <FaReact className="tech-icon react-color spinning-icon" />
+            </div>
+            <div className="floating-icon float-icon-2">
+              <div className="icon-glow"></div>
+              <FaNodeJs className="tech-icon node-color" />
+            </div>
+            <div className="floating-icon float-icon-3">
+              <div className="icon-glow"></div>
+              <SiGo className="tech-icon go-color spinning-icon" />
+            </div>
+            <div className="floating-icon float-icon-4">
+              <div className="icon-glow"></div>
+              <SiPostgresql className="tech-icon postgres-color" />
+            </div>
+            <div className="floating-icon float-icon-5">
+              <div className="icon-glow"></div>
+              <FaDatabase className="tech-icon database-color spinning-icon" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
   )
-}
+})
+
+Hero.displayName = 'Hero'
 
 export default Hero
 
