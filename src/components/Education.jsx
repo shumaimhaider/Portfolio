@@ -1,4 +1,4 @@
-import { FaGraduationCap, FaCalendar, FaUniversity } from 'react-icons/fa'
+import { FaGraduationCap, FaUniversity } from 'react-icons/fa'
 import './Education.css'
 
 const Education = () => {
@@ -16,10 +16,6 @@ const Education = () => {
               <FaUniversity className="inline-icon" />
               University of Management and Technology
             </h4>
-            <p className="education-period">
-              <FaCalendar className="inline-icon" />
-              September 2018 - November 2022
-            </p>
             <p className="education-location">Lahore, Pakistan</p>
           </div>
         </div>

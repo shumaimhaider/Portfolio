@@ -285,6 +285,20 @@
   .navbar {
     background-color: rgba(255, 255, 255, 0.95);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .navbar-logo {
+    font-size: 1.5rem;
+    padding: 6px 12px;
+  }
+
+  .logo-bracket {
+    font-size: 1.7rem;
   }
 
   .nav-menu {
@@ -294,19 +308,41 @@
     flex-direction: column;
     background-color: rgba(255, 255, 255, 0.98);
     width: 100%;
+    height: calc(100vh - 80px);
     text-align: center;
-    transition: left 0.3s ease;
-    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-    padding: 2rem 0;
-    gap: 1.5rem;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    padding: 3rem 0;
+    gap: 2rem;
+    backdrop-filter: blur(20px);
+    z-index: 999;
+    overflow-y: auto;
   }
 
   .nav-menu.active {
     left: 0;
   }
 
+  .nav-item {
+    width: 100%;
+    padding: 0 2rem;
+  }
+
+  .nav-link {
+    display: block;
+    font-size: 1.2rem;
+    padding: 1rem 0;
+    width: 100%;
+  }
+
+  .nav-link::before {
+    bottom: 5px;
+  }
+
   .nav-icon {
     display: block;
+    z-index: 1001;
+    padding: 8px;
   }
 
   .nav-resume-btn {

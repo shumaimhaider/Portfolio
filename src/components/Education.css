@@ -18,7 +18,8 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   display: flex;
   gap: 2rem;
-  align-items: start;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid var(--border-color);
 }
@@ -43,6 +44,7 @@
 
 .education-details {
   flex: 1;
+  text-align: center;
 }
 
 .education-degree {
@@ -59,6 +61,7 @@
   margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
 }
 
