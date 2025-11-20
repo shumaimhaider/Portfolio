@@ -1,10 +1,4 @@
-# Allow all search engines to crawl
 User-agent: *
 Allow: /
-
-# Sitemap location
 Sitemap: https://www.shumaimhaider.com/sitemap.xml
-
-# Crawl-delay (optional, helps prevent server overload)
-Crawl-delay: 1
 
