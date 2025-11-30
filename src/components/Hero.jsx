@@ -7,7 +7,7 @@ const Hero = memo(() => {
   const [nameText, setNameText] = useState('')
   const [typedText, setTypedText] = useState('')
   const [showRole, setShowRole] = useState(false)
-  const roles = ['Full Stack Developer', 'Software Engineer', 'Problem Solver', 'Tech Enthusiast']
+  const roles = ['Full Stack Developer', 'Software Engineer']
   const [roleIndex, setRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   const fullName = 'Shumaim Haider'
