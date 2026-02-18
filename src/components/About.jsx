@@ -13,7 +13,7 @@ const About = memo(() => {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !hasAnimated) {
             setHasAnimated(true)
-            const targets = { experience: 3, projects: 10, technologies: 15 }
+            const targets = { experience: 6, projects: 10, technologies: 15 }
             const duration = 2000
             const steps = 60
             const interval = duration / steps
@@ -66,7 +66,7 @@ const About = memo(() => {
             <div className="about-intro">
               <h3 className="about-subtitle">Crafting Digital Excellence</h3>
               <p className="about-highlight">
-                A passionate Full Stack Developer with over 3 years of experience 
+                A passionate Full Stack Developer with 6+ years of experience 
                 building scalable, high-performance web applications that drive business results.
               </p>
             </div>
@@ -110,7 +110,7 @@ const About = memo(() => {
           <div className="about-stats scroll-reveal-right">
             <div className="stat-card stat-card-1">
               <div className="stat-icon">📅</div>
-              <h3 className="counter">{3}+</h3>
+              <h3 className="counter">{6}+</h3>
               <p>Years Experience</p>
               <div className="stat-progress"></div>
             </div>

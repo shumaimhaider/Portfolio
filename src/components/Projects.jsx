@@ -27,7 +27,7 @@ const Projects = () => {
       ],
     },
     {
-      title: 'FixaFib',
+      title: 'VitalCare',
       role: 'Full Stack Developer',
       category: 'Health-Tech Solution',
       icon: '🏥',

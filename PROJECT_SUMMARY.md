@@ -120,7 +120,7 @@ npm run preview
 - ✅ Professional summary and bio
 - ✅ Work experience at Focusteck (current)
 - ✅ Work experience at CodingCops
-- ✅ Featured projects: Lango, FixaFib, Connect Wheels
+- ✅ Featured projects: Lango, VitalCare, Connect Wheels
 - ✅ Technical skills across Frontend, Backend, and Tools
 - ✅ BSCS degree from UMT
 - ✅ Language proficiencies

@@ -83,20 +83,26 @@ const Hero = memo(() => {
             </div>
           )}
           <p className="hero-description animate-fade-in-delay">
-            With <strong>3+ years of experience</strong>, I engineer high-performance applications that drive 
-            real business impact. Specialized in <strong>React</strong>, <strong>Golang</strong>, <strong>Node.js</strong>, 
-            and <strong>PostgreSQL</strong>—delivering systems that scale reliably and perform exceptionally.
+            With <strong>6+ years of experience</strong>, I build high-performance full-stack systems that drive 
+            real business impact. My expertise spans <strong>React</strong>, <strong>Golang</strong>, <strong>Node.js</strong>, 
+            and <strong>PostgreSQL</strong>, delivering scalable and resilient architectures.
           </p>
           
           <p className="hero-description-secondary">
-            From architecting microservices to optimizing complex databases, I transform 
-            challenging technical problems into elegant, scalable solutions. Every line of code 
-            is written with performance, maintainability, and user experience at its core.
+            I leverage AI-augmented development workflows to increase productivity, improve code quality, 
+            and accelerate delivery while maintaining strong engineering principles and clean architecture.
+          </p>
+          <p className="hero-description-secondary">
+            I believe modern engineering is about combining deep technical expertise with intelligent tooling 
+            to ship faster and smarter.
+          </p>
+          <p className="hero-description-secondary">
+            Let's connect if you're building ambitious, scalable products.
           </p>
 
           <div className="hero-cta">
             <a 
-              href="https://drive.google.com/file/d/1FqxGHmyr9bOxxgF4eC2DwN5ZhHfG1OoA/view?usp=sharing" 
+              href="https://drive.google.com/file/d/11KlDaIoI3JmJ7JeiI9Q5DeUJ9mAijmw5/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="resume-button"

@@ -227,7 +227,7 @@ Your portfolio now demonstrates:
 5. **User Experience**: Smooth, intuitive, and engaging interface
 
 ### Pitch Points:
-- "3+ years experience with proven impact"
+- "6+ years experience with proven impact"
 - "90% proficiency in modern tech stack"
 - "Delivered 10+ projects with measurable results"
 - "60% performance improvements achieved"

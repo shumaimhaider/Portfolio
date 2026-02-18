@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { FaReact, FaNodeJs, FaGitAlt, FaDatabase, FaDocker } from 'react-icons/fa'
-import { SiGo, SiGraphql, SiPostgresql, SiExpress, SiJavascript, SiTypescript, SiRedis, SiApachekafka } from 'react-icons/si'
+import { SiGo, SiGraphql, SiPostgresql, SiExpress, SiJavascript, SiTypescript, SiRedis, SiApachekafka, SiKubernetes, SiTerraform, SiAmazonaws } from 'react-icons/si'
 import './Skills.css'
 
 const Skills = () => {
@@ -34,8 +34,17 @@ const Skills = () => {
       skills: [
         { name: 'PostgreSQL', icon: <SiPostgresql />, level: 90, color: '#4169E1' },
         { name: 'Redis', icon: <SiRedis />, level: 90, color: '#DC382D' },
-        { name: 'Docker', icon: <FaDocker />, level: 90, color: '#2496ED' },
         { name: 'Git', icon: <FaGitAlt />, level: 90, color: '#F05032' },
+      ],
+    },
+    {
+      category: 'Cloud & DevOps',
+      icon: '☁️',
+      skills: [
+        { name: 'Docker', icon: <FaDocker />, level: 90, color: '#2496ED' },
+        { name: 'Kubernetes', icon: <SiKubernetes />, level: 85, color: '#326CE5' },
+        { name: 'Terraform', icon: <SiTerraform />, level: 85, color: '#7B42BC' },
+        { name: 'AWS', icon: <SiAmazonaws />, level: 85, color: '#FF9900' },
       ],
     },
   ]
@@ -51,6 +60,8 @@ const Skills = () => {
     { name: 'System Design', icon: '📐' },
     { name: 'API Design', icon: '🎯' },
     { name: 'Performance Optimization', icon: '⚡' },
+    { name: 'Infrastructure as Code', icon: '📜' },
+    { name: 'Cloud Architecture', icon: '☁️' },
   ]
 
   useEffect(() => {

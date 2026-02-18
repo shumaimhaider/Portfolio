@@ -23,7 +23,7 @@ const Navbar = memo(() => {
           setScrollProgress(scrolled)
 
           // Update active section
-          const sections = ['hero', 'about', 'experience', 'projects', 'skills', 'education', 'contact']
+          const sections = ['hero', 'about', 'projects', 'skills', 'education', 'contact']
           for (const section of sections) {
             const element = document.getElementById(section)
             if (element) {
@@ -48,7 +48,6 @@ const Navbar = memo(() => {
 
   const navItems = [
     { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Education', href: '#education' },
