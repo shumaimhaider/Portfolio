@@ -66,8 +66,9 @@ const About = memo(() => {
             <div className="about-intro">
               <h3 className="about-subtitle">Crafting Digital Excellence</h3>
               <p className="about-highlight">
-                A passionate Full Stack Developer with 6+ years of experience 
-                building scalable, high-performance web applications that drive business results.
+                I build high-performance full-stack systems that drive measurable business outcomes. 
+                My expertise spans React, Golang, Node.js, and PostgreSQL—delivering scalable architectures 
+                that support real-world operations and growth.
               </p>
             </div>
             
@@ -77,8 +78,8 @@ const About = memo(() => {
                 <div className="detail-content">
                   <h4>Professional Expertise</h4>
                   <p>
-                    Specialized in creating efficient, user-friendly solutions using modern technologies. 
-                    Expert in React, Golang, Node.js, and PostgreSQL with a focus on clean architecture.
+                    From scalable distributed architectures to production-ready solutions, I focus on 
+                    building software that drives measurable results with reliability and maintainability at scale.
                   </p>
                 </div>
               </div>
@@ -86,10 +87,10 @@ const About = memo(() => {
               <div className="detail-item">
                 <div className="detail-icon">💼</div>
                 <div className="detail-content">
-                  <h4>Proven Track Record</h4>
+                  <h4>AI-Assisted Development</h4>
                   <p>
-                    Successfully delivered diverse projects from communication platforms to health-tech 
-                    solutions, consistently focusing on performance optimization and maintainability.
+                    I leverage AI-assisted development tools to accelerate delivery, improve code quality, 
+                    and streamline engineering workflows—without compromising on strong software design principles.
                   </p>
                 </div>
               </div>
@@ -97,10 +98,10 @@ const About = memo(() => {
               <div className="detail-item">
                 <div className="detail-icon">⚡</div>
                 <div className="detail-content">
-                  <h4>Technical Innovation</h4>
+                  <h4>Business Impact</h4>
                   <p>
-                    Passionate about real-time features, microservices architecture, and leveraging 
-                    cutting-edge technologies to solve complex business challenges.
+                    I believe modern engineering combines deep technical expertise with intelligent tooling 
+                    to ship faster, smarter, and with direct business impact.
                   </p>
                 </div>
               </div>
