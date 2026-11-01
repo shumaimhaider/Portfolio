@@ -7,7 +7,7 @@ const Hero = memo(() => {
   const [nameText, setNameText] = useState('')
   const [typedText, setTypedText] = useState('')
   const [showRole, setShowRole] = useState(false)
-  const roles = ['Full Stack Developer', 'Software Engineer']
+  const roles = ['Forward Deployed Engineer', 'Senior Software Engineer', 'AI Agent Developer']
   const [roleIndex, setRoleIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   const fullName = 'Shumaim Haider'
@@ -65,7 +65,7 @@ const Hero = memo(() => {
         <div className="hero-text">
           <div className="hero-badge">
             <FaRocket className="badge-icon" />
-            <span>Available for opportunities</span>
+            <span>Open to Forward Deployed Engineer roles</span>
           </div>
 
           <h1 className="hero-title">
@@ -83,26 +83,24 @@ const Hero = memo(() => {
             </div>
           )}
           <p className="hero-description animate-fade-in-delay">
-            With <strong>6+ years of experience</strong>, I build high-performance full-stack systems that drive 
-            real business impact. My expertise spans <strong>React</strong>, <strong>Golang</strong>, <strong>Node.js</strong>, 
-            and <strong>PostgreSQL</strong>, delivering scalable and resilient architectures.
+            <strong>Claude Certified Developer</strong> and <strong>Forward Deployed Engineer</strong> with
+            5 years of experience. I work directly with clients to understand their requirements and deliver
+            production-ready solutions end to end, from <strong>AI agents</strong> to
+            <strong> distributed backend systems</strong>.
           </p>
-          
+
           <p className="hero-description-secondary">
-            I leverage AI-augmented development workflows to increase productivity, improve code quality, 
-            and accelerate delivery while maintaining strong engineering principles and clean architecture.
-          </p>
-          <p className="hero-description-secondary">
-            I believe modern engineering is about combining deep technical expertise with intelligent tooling 
-            to ship faster and smarter.
+            Skilled in full-stack development (<strong>React</strong>, <strong>Golang</strong>, <strong>Node.js</strong>,
+            <strong> PostgreSQL</strong>), agentic workflows, RAG, tool calling and MCP, turning business needs
+            into scalable, reliable software with measurable impact.
           </p>
           <p className="hero-description-secondary">
-            Let's connect if you're building ambitious, scalable products.
+            Let's connect if you need an engineer who can sit with your customers and ship the solution.
           </p>
 
           <div className="hero-cta">
             <a 
-              href="https://drive.google.com/file/d/11KlDaIoI3JmJ7JeiI9Q5DeUJ9mAijmw5/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1MBaOxa1tbzQh3YodEh52TP139MSz4kpG/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="resume-button"

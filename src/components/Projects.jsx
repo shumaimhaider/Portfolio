@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { FaExternalLinkAlt, FaGithub, FaChartLine, FaUsers, FaClock } from 'react-icons/fa'
+import { FaChartLine, FaUsers, FaClock } from 'react-icons/fa'
 import './Projects.css'
 
 const Projects = () => {
@@ -7,64 +7,74 @@ const Projects = () => {
 
   const projects = [
     {
+      title: 'Terraboost Media',
+      role: 'Full Stack Developer',
+      category: 'Media Platform',
+      icon: '📈',
+      color: '#7C3AED',
+      description: 'Full-stack work on the Terraboost Media platform, covering code quality foundations as well as end-to-end delivery of high-priority features.',
+      achievements: [
+        'Integrated linters, enforced coding standards, and introduced recommended design patterns for more consistent, readable, and robust code',
+        'Implemented high-priority features end-to-end: design, development, testing, and deployment',
+        'Kept delivery reliable and aligned with business goals',
+      ],
+      technologies: ['React', 'Node.js', 'Design Patterns', 'Linting'],
+      metrics: [
+        { icon: <FaChartLine />, label: 'End-to-End', description: 'Feature Delivery' },
+        { icon: <FaClock />, label: 'Consistent', description: 'Code Quality' },
+      ],
+    },
+    {
+      title: 'FixaFib',
+      role: 'Full Stack Developer',
+      category: 'MVP Delivery',
+      icon: '🛠️',
+      color: '#059669',
+      description: 'Joined during a critical delivery phase to optimize core features, improve system stability, and prepare the product for MVP launch.',
+      achievements: [
+        'Led the optimization of core features to enhance system stability',
+        'Increased development velocity by resolving blockers',
+        'Restructured delayed modules, bringing the project back on schedule',
+      ],
+      technologies: ['React', 'Node.js', 'PostgreSQL'],
+      metrics: [
+        { icon: <FaClock />, label: 'On Schedule', description: 'MVP Launch' },
+        { icon: <FaChartLine />, label: 'Faster', description: 'Dev Velocity' },
+      ],
+    },
+    {
       title: 'Lango',
       role: 'Full Stack Developer',
       category: 'Communication Platform',
       icon: '🌐',
       color: '#4F46E5',
-      description: 'A sophisticated communication/interpretation platform where I contributed as a Full-Stack Engineer. Owned and delivered multiple core features using React, GraphQL, Golang, and Node.js, following Clean Architecture principles for maintainability.',
+      description: 'Owned and delivered multiple core features using React, GraphQL, Golang, and Node.js, following Clean Architecture principles for maintainability.',
       achievements: [
-        'Refactored multiple critical modules, reducing code complexity by 40%',
-        'Improved API response times by 60% through optimization',
-        'Implemented real-time communication features serving 10K+ users',
-        'Enhanced system reliability with comprehensive test coverage',
+        'Delivered multiple core features across the full stack',
+        'Refactored critical modules, reducing code complexity',
+        'Improved API response times',
       ],
-      technologies: ['React', 'GraphQL', 'Golang', 'Node.js', 'PostgreSQL', 'WebSockets'],
+      technologies: ['React', 'GraphQL', 'Golang', 'Node.js', 'Clean Architecture'],
       metrics: [
-        { icon: <FaUsers />, label: '10K+', description: 'Active Users' },
-        { icon: <FaChartLine />, label: '60%', description: 'Performance Boost' },
-        { icon: <FaClock />, label: '40%', description: 'Code Reduction' },
+        { icon: <FaChartLine />, label: 'Faster', description: 'API Responses' },
+        { icon: <FaClock />, label: 'Lower', description: 'Code Complexity' },
       ],
     },
     {
-      title: 'VitalCare',
-      role: 'Full Stack Developer',
-      category: 'Health-Tech Solution',
-      icon: '🏥',
-      color: '#059669',
-      description: 'A comprehensive health-tech product where I worked as a Full-Stack Developer during a critical delivery phase. Led the optimization of core features to enhance system stability and prepare the product for MVP launch.',
-      achievements: [
-        'Increased development velocity by 50% by resolving critical blockers',
-        'Restructured delayed modules bringing project back on track',
-        'Successfully delivered MVP launch ahead of schedule',
-        'Implemented robust error handling and monitoring systems',
-      ],
-      technologies: ['React', 'Node.js', 'Express.js', 'PostgreSQL', 'Redis', 'WebSockets'],
-      metrics: [
-        { icon: <FaChartLine />, label: '50%', description: 'Velocity Increase' },
-        { icon: <FaClock />, label: 'On-Time', description: 'MVP Delivery' },
-        { icon: <FaUsers />, label: '5K+', description: 'Beta Users' },
-      ],
-    },
-    {
-      title: 'Connect Wheels',
-      role: 'Personal Project',
-      category: 'Microservices Platform',
-      icon: '🚗',
+      title: 'Judy',
+      role: 'Front End Developer',
+      category: 'Security Platform',
+      icon: '🛡️',
       color: '#DC2626',
-      description: 'A microservices-driven vehicle marketplace platform built as a self-directed project to deepen practical experience in distributed system design and scalable backend architectures.',
+      description: 'Designed and implemented front-end UI screens for a security platform, supporting device enrollment and management for enterprise organizations.',
       achievements: [
-        'Built scalable microservices architecture in Node.js + Express with TypeORM',
-        'Implemented gRPC for low-latency inter-service communication',
-        'Used Kafka for event-driven workflows and real-time updates',
-        'Developed responsive React frontend with React Query for data management',
+        'Built device enrollment and management screens in React',
+        'Enhanced user experience and administrative control for enterprise admins',
       ],
-      technologies: ['React', 'Node.js', 'gRPC', 'Kafka', 'TypeORM', 'Microservices', 'Docker'],
-      github: '#',
+      technologies: ['React', 'JavaScript'],
       metrics: [
-        { icon: <FaChartLine />, label: '8', description: 'Microservices' },
-        { icon: <FaClock />, label: '<50ms', description: 'Latency' },
-        { icon: <FaUsers />, label: 'Scalable', description: 'Architecture' },
+        { icon: <FaUsers />, label: 'Enterprise', description: 'Organizations' },
+        { icon: <FaChartLine />, label: 'Device', description: 'Management' },
       ],
     },
   ]
@@ -74,7 +84,7 @@ const Projects = () => {
       <div className="projects-header">
         <h2 className="section-title">Featured Projects</h2>
         <p className="projects-subtitle">
-          Delivering impactful solutions across diverse domains
+          Client projects delivered end to end
         </p>
       </div>
       

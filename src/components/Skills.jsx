@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { FaReact, FaNodeJs, FaGitAlt, FaDatabase, FaDocker } from 'react-icons/fa'
-import { SiGo, SiGraphql, SiPostgresql, SiExpress, SiJavascript, SiTypescript, SiRedis, SiApachekafka, SiKubernetes, SiTerraform, SiAmazonaws } from 'react-icons/si'
+import { SiGo, SiGraphql, SiPostgresql, SiExpress, SiJavascript, SiTypescript, SiApachekafka, SiKubernetes, SiTerraform, SiDotnet } from 'react-icons/si'
 import './Skills.css'
 
 const Skills = () => {
@@ -25,15 +25,16 @@ const Skills = () => {
         { name: 'Golang', icon: <SiGo />, level: 90, color: '#00ADD8' },
         { name: 'Node.js', icon: <FaNodeJs />, level: 90, color: '#339933' },
         { name: 'Express.js', icon: <SiExpress />, level: 90, color: '#000000' },
+        { name: '.NET', icon: <SiDotnet />, level: 80, color: '#512BD4' },
         { name: 'gRPC', icon: <FaDatabase />, level: 90, color: '#4285F4' },
       ],
     },
     {
-      category: 'Database & Infrastructure',
+      category: 'Data & Messaging',
       icon: '🗄️',
       skills: [
         { name: 'PostgreSQL', icon: <SiPostgresql />, level: 90, color: '#4169E1' },
-        { name: 'Redis', icon: <SiRedis />, level: 90, color: '#DC382D' },
+        { name: 'Kafka', icon: <SiApachekafka />, level: 85, color: '#231F20' },
         { name: 'Git', icon: <FaGitAlt />, level: 90, color: '#F05032' },
       ],
     },
@@ -44,24 +45,22 @@ const Skills = () => {
         { name: 'Docker', icon: <FaDocker />, level: 90, color: '#2496ED' },
         { name: 'Kubernetes', icon: <SiKubernetes />, level: 85, color: '#326CE5' },
         { name: 'Terraform', icon: <SiTerraform />, level: 85, color: '#7B42BC' },
-        { name: 'AWS', icon: <SiAmazonaws />, level: 85, color: '#FF9900' },
       ],
     },
   ]
 
   const additionalSkills = [
+    { name: 'Agentic Workflows', icon: '🤖' },
+    { name: 'Agent Development', icon: '🧠' },
+    { name: 'RAG, Tool Calling & MCP', icon: '🔗' },
+    { name: 'MCP Server Development', icon: '🖧' },
+    { name: 'Prompt Engineering', icon: '✍️' },
+    { name: 'Context Engineering', icon: '📚' },
+    { name: 'Model Optimization', icon: '🎛️' },
+    { name: 'Application Security', icon: '🔒' },
     { name: 'RESTful APIs', icon: '🔌' },
     { name: 'Microservices', icon: '🔧' },
     { name: 'WebSockets', icon: '🔄' },
-    { name: 'Clean Architecture', icon: '🏗️' },
-    { name: 'Test-Driven Development', icon: '✅' },
-    { name: 'CI/CD', icon: '🚀' },
-    { name: 'Kafka', icon: <SiApachekafka /> },
-    { name: 'System Design', icon: '📐' },
-    { name: 'API Design', icon: '🎯' },
-    { name: 'Performance Optimization', icon: '⚡' },
-    { name: 'Infrastructure as Code', icon: '📜' },
-    { name: 'Cloud Architecture', icon: '☁️' },
   ]
 
   useEffect(() => {
@@ -90,7 +89,7 @@ const Skills = () => {
       <div className="skills-header">
         <h2 className="section-title">Skills & Technologies</h2>
         <p className="skills-subtitle">
-          Delivering excellence through expertise in modern technologies
+          Full-stack, distributed systems and AI agent engineering
         </p>
       </div>
       
@@ -154,7 +153,7 @@ const Skills = () => {
               Additional Expertise
             </h3>
             <p className="additional-skills-description">
-              Comprehensive skill set covering the full development lifecycle
+              AI agents, security and systems skills for client-facing delivery
             </p>
           </div>
           <div className="tags-container">
