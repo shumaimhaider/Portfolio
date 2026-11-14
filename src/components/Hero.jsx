@@ -100,7 +100,7 @@ const Hero = memo(() => {
 
           <div className="hero-cta">
             <a 
-              href="https://drive.google.com/file/d/1MBaOxa1tbzQh3YodEh52TP139MSz4kpG/view?usp=sharing" 
+              href="https://drive.google.com/file/d/1fRB4gW-ijZR6Jz0N6TvW7pDLjEglAO6t/view?usp=sharing" 
               target="_blank" 
               rel="noopener noreferrer"
               className="resume-button"
